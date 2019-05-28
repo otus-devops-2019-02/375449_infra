@@ -1,4 +1,15 @@
-ДЗ к занятию №6
+ДЗ к занятию №7
+
+### Сделано:
+ 
+Установил packer
+Подготовил образ reddit-base
+Создал ubuntu16.json
+Создал и добавил переменные в файл variables.json
+Скрыл в .gitignore файл variables.json
+
+<details>
+<summary>ДЗ к занятию №6</summary>
 
 ### Данные для подключения:
 testapp_IP = 104.155.8.119
@@ -13,6 +24,7 @@ gcloud compute instances create reddit-app --boot-disk-size=10GB \
 
 ### Создаём правило на файерволе через gcloud
 gcloud compute firewall-rules create default-puma-server --allow=tcp:9292 --target-tags puma-server
+</details>
 
 <details>
 <summary>ДЗ к занятию №5</summary>
