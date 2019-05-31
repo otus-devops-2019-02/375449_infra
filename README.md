@@ -1,33 +1,43 @@
-ДЗ к занятию №7
+ДЗ к занятию №8 (terraform-1)
+
+### Сделано:
+
+	1. Определите input переменную для приватного ключа - private_key_path
+	2. Определите input переменную для задания зоны - zone
+	3. Отформатировал командой terraform fmt
+	4. Сделал рядом файл terraform.tfvars.example
+	
+<details>
+<summary>ДЗ к занятию №7 (packer-base)</summary>
 
 ### Сделано:
  
-Установил packer
-Подготовил образ reddit-base
-Создал ubuntu16.json
-Создал и добавил переменные в файл variables.json
-Скрыл в .gitignore файл variables.json
+	1. Установил packer
+	2. Подготовил образ reddit-base
+	3. Создал ubuntu16.json
+	4. Создал и добавил переменные в файл variables.json
+	5. Скрыл в .gitignore файл variables.json
 
+</details>
 <details>
-<summary>ДЗ к занятию №6</summary>
+<summary>ДЗ к занятию №6 (cloud-testapp)</summary>
 
 ### Данные для подключения:
-testapp_IP = 104.155.8.119
+testapp_IP = 35.240.16.90
 testapp_port = 9292
-
-### Создаём VM с автозапуском скрипта
+### Создание ВМ с автозапуском скрипта
 gcloud compute instances create reddit-app --boot-disk-size=10GB \
 --image-family ubuntu-1604-lts --image-project=ubuntu-os-cloud \
 --machine-type=g1-small --tags puma-server --restart-on-failure \
---metadata-from-file startup-script=375449_infra/startup_script.sh \
+--metadata-from-file startup-script=dchirkov_infra/startup_script.sh \
 --zone europe-west1-b
-
-### Создаём правило на файерволе через gcloud
+### Создание правила файервола посредством команды gcloud
 gcloud compute firewall-rules create default-puma-server --allow=tcp:9292 --target-tags puma-server
 </details>
 
 <details>
-<summary>ДЗ к занятию №5</summary>
+
+<summary>ДЗ к занятию №5 (cloud-bastion)</summary>
 
 ### SSH-подключение к someinternalhost в одну команду
 Подключиться к VM someinternalhost 10.132.0.5 через VM bastion 130.211.109.49 :
@@ -51,4 +61,5 @@ User appuser
 
 bastion_IP = 130.211.109.49
 someinternalhost_IP = 10.132.0.5
+
 </details>
